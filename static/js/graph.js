@@ -5,7 +5,17 @@ queue()
     .await(makeGraphs);
 
 function makeGraphs(error, tickets) {
-    
+
+    tickets.results.forEach(function(d){
+        //console.log(typeof(d.date)); //check the type before it changes
+        var orgDate = new Date(d.created_at); // changes the string date into origional date type
+        dayDate = orgDate.getDate();
+        d.created_at = dayDate; // Overwrite the String date with Original date type
+        //console.log(typeof(d.date)); //check the type after make change, you can see it converts into date object
+                
+    });
+
+
     var ndx = crossfilter(tickets.results);
     show_ticket_type_selector(ndx);
     show_tickets_per_technician(ndx);
@@ -60,7 +70,7 @@ function show_tickets_per_facility(ndx) {
         .width(300)
         .height(300)
         .slicesCap(4)
-        .innerRadius(50)
+        .innerRadius(80)
         .dimension(dim)
         .group(group);
 }
@@ -81,4 +91,23 @@ function show_tickets_per_user_id(ndx) {
         .othersGrouper(false);
        
 
+}
+
+// TICKETS PER DAY
+
+function show_tickets_per_day(ndx) {
+    var dim = ndx.dimension(dc.pluck("created_at"));
+    var group = dim.group();
+
+    dc.lineChart("#tickets-per-day")
+        .width(700)
+        .height(300)
+        .x(d3.scale.linear().domain([1, 31]))
+        .xAxisLabel("Date")
+        .yAxisLabel("Tickets")
+        .brushOn(false)
+        .dimension(dim)
+        .group(group)
+        .xAxis().ticks(30);
+        
 }
