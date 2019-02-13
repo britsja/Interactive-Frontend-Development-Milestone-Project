@@ -7,6 +7,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/dc.min.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/styles.css" type="text/css" />
     <!-- JS -->
     <script type="text/javascript" src="static/js/d3.min.js"></script>
     <script type="text/javascript" src="static/js/crossfilter.min.js"></script>
@@ -29,25 +30,36 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Reset Displays</a>
+                <a class="nav-item nav-link" href="javascript:dc.filterAll(); dc.renderAll();">Reset Chart Filter</a>
                 <a class="nav-item nav-link" href="#">Stats Information</a>                
             </div>
         </div>
     </nav>
 
     <!-- Graphs -->
-    <!-- Test data access -->
-    <div class="container">
+    
+    <div class="col">
+        <!-- First Row of Data (Large Screens) -->
         <div class="row">
             <div class="col-sm-12 text-center">
-                <div class="col-sm-4" id="ticket-type-selector">
-                    <h1>Ticket Type</h1> 
+                <div class="col-sm-3" id="ticket-type-selector">
+                    <h3>Ticket Type</h3> 
                 </div>
-                <div class="container col-md-6" id="tickets-technician">
-                    <h1>Tickets by Technician</h1>
-                
+                <div class="col-sm-6" id="tickets-technician">
+                    <h3>Tickets by Technician</h3>
+                </div>
+                <div class="col-sm-3" id="tickets-by-facility">
+                    <h3>Tickets per Facility</h3>                    
                 </div>                
             </div>    
+        </div>
+        <div class="row spacing-row pb-5 pt-5"></div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div class="col-sm-3" id="tickets-per-user-id">
+                    <h3>Top 5 users per User ID</h3>                    
+                </div>
+            </div>
         </div>
     </div>
 
