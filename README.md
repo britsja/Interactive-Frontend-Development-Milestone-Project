@@ -30,7 +30,7 @@ The deployed project can be accessed on github pages at the following link: <a h
 ### User Experience
 
 As a user of the IT Support Stats website, you need to be able to do the following on the website:
-- Opening the website needs to show the statistics in the forms of charts and a selection box
+- Website needs to show the statistics in the forms of charts and a selection box
 - User must be able to click on an element in a chart or selection box to filter the displayed results
 - Multiple chart or selection box entries can be used to further filter the shown results
 - A user can reset any active filters with a button in the menu
@@ -40,28 +40,28 @@ As a user of the IT Support Stats website, you need to be able to do the followi
 
 ### Features
 
-Home Page - take information from the provided json statistics file and render charts and selection box based on the information
+- Home Page - take information from the provided json statistics file and render charts and selection box based on the information
           - Selecting entries on the list box or chart will filter the charts based on the selection. Multiple entries can be selected
           - The menu in the top right contains a button to reset any chart filters that might be active and reset the chart display
           - Navigation entry in menu also links to the "Stats Information" page
           
-Home Page Charts - Ticket Type - Selection area with all the support ticket categories that tickets can be filtered by
+- Home Page Charts - Ticket Type - Selection area with all the support ticket categories that tickets can be filtered by
                  - Ticket by Technician - Information on the total amount of tickets assigned or taken by each technician during the month
                  - Tickets per Facility - The piechart shows the highest call logging companies or facilities
                  - Top 5 users per User ID - Displays the user ID of the top 5 users that logged the most tickets during the month
                  - Tickets per Day - The total amount of tickets opened per day
                  - User ratings by date - Fictitious data was generated for user ratings as this feature wasn't enabled on Zendesk
           
-Stats Information - This page displays information inserted by the callcentre administrator which are conclusions based on the months statistics
+- Stats Information - This page displays information inserted by the callcentre administrator which are conclusions based on the months statistics
 
 
 #
 
 ### Features Left to Implement
 
-Data - Allow user to import new json files and display information for different months
-Stats Information - Enable the administrator easy access to the cards on the Stats Information page to update conclusions and select and store information for different months
-Zendesk Stats - Enable the option on Zendesk to receive user feedback and thus have ratings to display on the scatterplot chart.
+- Data - Allow user to import new json files and display information for different months
+- Stats Information - Enable the administrator easy access to the cards on the Stats Information page to update conclusions and select and store information for different months
+- Zendesk Stats - Enable the option on Zendesk to receive user feedback and thus have ratings to display on the scatterplot chart.
 
 
 #
